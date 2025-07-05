@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class LeadScoring {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int score = 0;
+
+        System.out.println("Lead Qualification Questions (Y/N):");
+
+        System.out.print("1. Does the lead have Budget? ");
+        if (sc.next().equalsIgnoreCase("Y")) score++;
+
+        System.out.print("2. Is the lead a Decision Maker? ");
+        if (sc.next().equalsIgnoreCase("Y")) score++;
+
+        System.out.print("3. Does the lead have a clear Need? ");
+        if (sc.next().equalsIgnoreCase("Y")) score++;
+
+        System.out.print("4. Is the lead ready within a short Timeline? ");
+        if (sc.next().equalsIgnoreCase("Y")) score++;
+
+        System.out.println("\nLead Score: " + score + "/4");
+
+        if (score >= 3) {
+            System.out.println("Priority: HIGH");
+        } else {
+            System.out.println("Priority: LOW");
+        }
+
+        sc.close();
+    }
+}
